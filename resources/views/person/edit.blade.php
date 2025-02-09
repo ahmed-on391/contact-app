@@ -86,6 +86,7 @@
                     <form action="{{ route('person.destroy', $person->id) }}" method="POST" class="mt-6">
                         @csrf
                         @method('DELETE')
+                        
                         <div class="flex justify-center">
                             <button 
                                 type="submit" 
