@@ -10,4 +10,11 @@ class Person extends Model
 {
     /** @use HasFactory<\Database\Factories\PersonFactory> */
     use HasFactory, SoftDeletes ;
+
+    protected $with = ['business'];
+    
+    public function business()
+    {
+        return $this->belongsTo(Business::class);
+    }
 }
