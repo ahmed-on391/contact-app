@@ -68,7 +68,8 @@ php artisan serve
 ---
 
 ## **📷 لقطات من التطبيق**  
-![واجهة لوحة التحكم](https://raw.githubusercontent.com/YourUsername/contact-app/main/screenshots/dashboard.png)
+![image](https://github.com/user-attachments/assets/7090eeb3-6f3e-447c-9c02-a7cbfb74f502)
+
 
 📌 *واجهة المستخدم للوحة التحكم.*  
 ![image](https://github.com/user-attachments/assets/abfaf13d-cd05-4969-8a5d-2509852ea795)
