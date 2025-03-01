@@ -15,7 +15,10 @@
 **تطبيق لإدارة جهات الاتصال** باستخدام Laravel & MySQL.  
 واجهة مستخدم بسيطة وسهلة تساعدك على **إضافة وتحديث وحذف جهات الاتصال** بسهولة.  
 
-![Contact-App Banner](https://via.placeholder.com/1000x300?text=Contact+App+Banner)  
+![Contact-App Banner])  <p align="center">
+  <img src="https://via.placeholder.com/1000x300?text=Contact+App+Banner" alt="Contact-App Banner">
+</p>
+
 
 ---
 
