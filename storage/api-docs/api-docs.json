@@ -1,0 +1,116 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laravel API Documentation",
+        "description": "Swagger OpenAPI documentation for Laravel API",
+        "contact": {
+            "email": "your_email@example.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/businesses": {
+            "get": {
+                "tags": [
+                    "Businesses"
+                ],
+                "summary": "Get list of businesses",
+                "description": "Returns a list of businesses",
+                "operationId": "a00c979b6af158a3fc96d508082aba95",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Business"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Businesses"
+                ],
+                "summary": "Create a new business",
+                "description": "Creates a new business",
+                "operationId": "57ffb180a4b8a5b0fc21a77feacc5d32",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "My Business"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "A great business"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Business created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Business"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Business": {
+                "title": "Business",
+                "description": "Business model",
+                "properties": {
+                    "id": {
+                        "title": "ID",
+                        "description": "Business ID",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "name": {
+                        "title": "Name",
+                        "description": "Name of the business",
+                        "type": "string",
+                        "example": "Tech Startup"
+                    },
+                    "description": {
+                        "title": "Description",
+                        "description": "Business description",
+                        "type": "string",
+                        "example": "A startup company focused on technology"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Business"
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Businesses",
+            "description": "API Endpoints for Businesses"
+        }
+    ]
+}
