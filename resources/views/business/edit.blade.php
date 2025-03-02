@@ -14,6 +14,15 @@
                         @csrf
                         @method('PUT')
                         
+                        @if ($errors->any())
+                            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
                         <div>
                             <label class="block font-medium text-gray-700">Business Name</label>
                             <input type="text" name="business_name" value="{{ $business->business_name }}" class="w-full mt-2 px-4 py-2 border rounded-lg shadow-sm focus:ring focus:ring-blue-300">
@@ -21,7 +30,7 @@
                         
                         <div>
                             <label class="block font-medium text-gray-700">Email</label>
-                            <input type="email" name="email" value="{{ $business->email }}" class="w-full mt-2 px-4 py-2 border rounded-lg shadow-sm focus:ring focus:ring-blue-300">
+                            <input type="email" name="contact_email" value="{{ $business->contact_email }}" class="w-full mt-2 px-4 py-2 border rounded-lg shadow-sm focus:ring focus:ring-blue-300">
                         </div>
                         
                        

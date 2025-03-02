@@ -35,7 +35,10 @@
                                     <td class="py-3 px-4 text-gray-800">{{ $person->firstname }} {{ $person->lastname }}</td>
                                     <td class="py-3 px-4 text-gray-800">{{ $person->email }}</td>
                                     <td class="py-3 px-4 text-gray-800">{{ $person->phone }}</td>
-                                    <td class="py-3 px-4 text-gray-800">{{ $person->business?->business_name }}</td>
+                                    <td class="py-3 px-4 text-gray-800 {{ ($person->business?->deleted_at) ? 'italic' : '' }}">
+                                        {{ $person->business?->business_name }}
+                                    </td>
+                                    
                                     <td class="py-3 px-4 text-center flex justify-center gap-4">
                                         <!-- Edit Button -->
                                         <a 

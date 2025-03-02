@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Business;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\BusinessRequest;
 class BusinessController extends Controller
 {
     /**
@@ -29,7 +29,7 @@ class BusinessController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(BusinessRequest $request)
     {
         $validated = $request->validate([
             'business_name' => 'required',
@@ -67,7 +67,7 @@ class BusinessController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Business $business)
+    public function update(BusinessRequest $request, Business $business)
     {
         $validated = $request->validate([
             'business_name' => 'required',
@@ -76,7 +76,7 @@ class BusinessController extends Controller
         ]);
         
 
-        
+            
         
         $business-> business_name= $request->input('business_name');
         $business-> contact_email = $request->input('contact_email');

@@ -10,14 +10,13 @@
             <div class="bg-white shadow-md rounded-lg overflow-hidden">
                 <div class="p-6 bg-gradient-to-r from-blue-50 to-white">
                     <!-- زر إضافة عمل جديد -->
-<div class="flex items-center justify-end mb-6">
-    <a 
-        class="bg-blue-600 text-white py-2 px-4 rounded-full shadow-lg hover:bg-blue-700 transition duration-200" 
-        href="{{ route('business.create') }}">
-        + Add A New Business
-    </a>
-</div>
-
+                    <div class="flex items-center justify-end mb-6">
+                        <a 
+                            class="bg-blue-600 text-white py-2 px-4 rounded-full shadow-lg hover:bg-blue-700 transition duration-200" 
+                            href="{{ route('business.create') }}">
+                            + Add A New Business
+                        </a>
+                    </div>
 
                     <!-- جدول البيانات -->
                     <table class="w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden">
@@ -44,7 +43,16 @@
                                             </svg>
                                         </a>
 
-                                       
+                                        <!-- زر الحذف -->
+                                        <form action="{{ route('business.destroy', $business->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this business?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="text-red-500 hover:text-red-700">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                                                </svg>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

@@ -13,7 +13,15 @@
 
                     <form action="{{ route('business.store') }}" method="POST" class="space-y-5">
                         @csrf
-
+                        @if ($errors->any())
+                        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
                         <!-- Business Name -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700" for="business_name">Business Name</label>
@@ -28,27 +36,17 @@
 
                         <!-- Email -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700" for="email">Email</label>
+                            <label class="block text-sm font-medium text-gray-700" for="contact_email">Email</label>
                             <input 
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" 
                                 type="email" 
-                                name="email" 
-                                id="email" 
+                                name="contact_email" 
+                                id="contact_email" 
                                 value="{{ old('email') }}" 
                                 placeholder="Enter email">
                         </div>
 
-                        <!-- Phone -->
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700" for="phone">Phone</label>
-                            <input 
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" 
-                                type="text" 
-                                name="phone" 
-                                id="phone" 
-                                value="{{ old('phone') }}" 
-                                placeholder="Enter phone">
-                        </div>
+                       
 
                         <!-- Submit and Cancel Buttons -->
                         <div class="flex justify-between items-center space-x-4">
