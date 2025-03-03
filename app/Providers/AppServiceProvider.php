@@ -10,7 +10,7 @@ use Illuminate\Support\ServiceProvider;
  *      description="Swagger OpenAPI documentation for Laravel API",
  *      @OA\Contact(
  *          email="your_email@example.com"
- *      )
+ *      )                                                                                                     
  * )
  */
 class AppServiceProvider extends ServiceProvider

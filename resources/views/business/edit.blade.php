@@ -10,7 +10,7 @@
             <div class="bg-white shadow-md rounded-lg overflow-hidden">
                 <div class="p-6 bg-gradient-to-r from-blue-50 to-white">
                     <!-- Edit Business Form -->
-                    <form action="{{ route('business.update', $business->id) }}" method="POST" class="space-y-6">
+                    <form action="{{ route('business.update', $business) }}" method="POST" class="space-y-6">
                         @csrf
                         @method('PUT')
                         

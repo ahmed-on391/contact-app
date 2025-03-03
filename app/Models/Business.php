@@ -55,4 +55,9 @@ class Business extends Model
     {
         return $this->hasMany(Person::class);
     }
+
+    public function category()
+    {
+        return $this->belongsToMany(BusinessCategory::class , 'category_has_businesses');
+    }
 }
