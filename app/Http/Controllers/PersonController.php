@@ -35,12 +35,11 @@ class PersonController extends Controller
             'firstname' => 'required',
             'lastname' => 'required',
             'email' => 'nullable|email',
-           
+
         ]);
-        
 
         $person = new Person;
-        
+
         $person->firstname = $request->input('firstname');
         $person->lastname = $request->input('lastname');
         $person->email = $request->input('email');
@@ -49,7 +48,6 @@ class PersonController extends Controller
         $person->save();
 
         return redirect(route('person.index'));
-       
     }
 
     /**
@@ -65,7 +63,7 @@ class PersonController extends Controller
      */
     public function edit(Person $person)
     {
-        return view('person.edit')->with(['person'=> $person ,'businesses'=> Business::all()]);
+        return view('person.edit')->with(['person' => $person, 'businesses' => Business::all()]);
     }
 
     /**
@@ -73,17 +71,16 @@ class PersonController extends Controller
      */
     public function update(Request $request, Person $person)
     {
-        
         $validated = $request->validate([
             'firstname' => 'required',
             'lastname' => 'required',
             'email' => 'nullable|email',
-           
-        ]);
-        
 
-        
-        
+        ]);
+
+
+
+
         $person->firstname = $request->input('firstname');
         $person->lastname = $request->input('lastname');
         $person->email = $request->input('email');
@@ -92,7 +89,6 @@ class PersonController extends Controller
         $person->save();
 
         return redirect(route('person.index'));
-       
     }
 
     /**

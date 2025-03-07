@@ -28,8 +28,10 @@ class Business extends Model
      * )
      * @var integer
      */
-    public $id;
+    /****************************************************************************** */
+    // public $id; // ده كان سبب المشكلة اللي انا كنت فيها اللي هوا id
 
+/******************************************************************************** */
     /**
      * @OA\Property(
      *      title="Name",
@@ -50,14 +52,24 @@ class Business extends Model
      */
     public $description;
 
-    
+    protected $table = 'businesses';
+
+
+    protected $fillable = [
+        
+        'business_name', 
+        
+        'contact_email',
+    ];
+
+        
     public function people()
     {
-        return $this->hasMany(Person::class);
+        return $this->hasMany(Person::class, 'business_id', 'id');
     }
 
-    public function category()
+    public function categories()
     {
-        return $this->belongsToMany(BusinessCategory::class , 'category_has_businesses');
+        return $this->belongsToMany(BusinessCategory::class , 'category_has_business');
     }
 }

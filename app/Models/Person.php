@@ -9,12 +9,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Person extends Model
 {
     /** @use HasFactory<\Database\Factories\PersonFactory> */
-    use HasFactory, SoftDeletes ;
+    use HasFactory, SoftDeletes;
 
-    protected $with = ['business'];
-    
+    // protected $with = ['business'];
+
     public function business()
     {
-        return $this->belongsTo(Business::class);
+        return $this->belongsTo(Business::class, 'business_id', 'id');
     }
 }

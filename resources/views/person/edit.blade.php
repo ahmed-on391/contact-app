@@ -63,7 +63,7 @@
                                 value="{{ old('phone', $person->phone) }}" 
                                 placeholder="Enter phone">
                         </div>
-
+                       
                          <!-- Business -->
                          <div>
                             <label class="block text-sm font-medium text-gray-700" for="business">Business</label>
@@ -71,15 +71,14 @@
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" 
                                 name="business_id" 
                                 id="business_id">
-                                
                                 <option value="">No Business</option>
-                                @foreach($businesses as $business)
+                               @foreach($businesses as $business)
                                     <option value="{{ $business->id }}" @selected($business->id == old('business_id', $person->business_id))>
                                         {{ $business->business_name }}
                                     </option>
                                 @endforeach
                         
-                            </select>
+                            </select> 
                         </div>
                         
 

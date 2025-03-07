@@ -8,6 +8,6 @@ class BusinessCategory extends Model
 {
     public function business()
     {
-        return $this->belongsToMany(Business::class , 'category_has_businesses');
+        return $this->belongsToMany(Business::class , 'category_has_business');
     }
 }
