@@ -29,16 +29,29 @@
                             </tr>
                         </thead>
                         <tbody>
+
                             @foreach ($businesses as $business)
                                 <tr class="border-b hover:bg-gray-50 transition duration-150">
-                                    <td class="py-3 px-4 text-gray-800">{{ $business->business_name }}</td>
+                                    <td class="py-3 px-4 text-gray-800">
+                                        
+                                        <a href="{{route('business.show', $business->id)}}">
+                                            {{ $business->business_name }}
+                                         </a>
+
+                                    </td>
                                     <td class="py-3 px-4 text-gray-800">{{ $business->contact_email }}</td>
                                     <td class="py-3 px-4 text-gray-800">
+
+                                      
+                                        
+
                                         @foreach($business->categories as $cat)
                                             {{ $cat->category_name }}
                                         @endforeach
                                     </td>
                                     <td class="py-3 px-4 text-center flex justify-center gap-4">
+
+
                                         <!-- زر تعديل -->
                                         <a 
                                             href="{{ route('business.edit', $business) }}" 

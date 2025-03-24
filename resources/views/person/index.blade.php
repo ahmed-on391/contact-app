@@ -32,7 +32,11 @@
                         <tbody>
                             @foreach ($people as $person)
                                 <tr class="border-b hover:bg-gray-50 transition duration-150">
-                                    <td class="py-3 px-4 text-gray-800">{{ $person->firstname }} {{ $person->lastname }}</td>
+                                    <td class="py-3 px-4 text-gray-800">
+                                        <a href="{{route('person.show', $person->id)}}">
+                                            {{$person->firstname}} {{$person->lastname}}
+                                        </a>
+                                    </td>
                                     <td class="py-3 px-4 text-gray-800">{{ $person->email }}</td>
                                     <td class="py-3 px-4 text-gray-800">{{ $person->phone }}</td>
                                     <td class="py-3 px-4 text-gray-800 {{ ($person->business?->deleted_at) ? 'italic' : '' }}">
