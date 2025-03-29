@@ -26,7 +26,10 @@
                                 <th class="py-3 px-4 text-left text-sm font-semibold">Email</th>
                                 <th class="py-3 px-4 text-left text-sm font-semibold">Phone</th>
                                 <th class="py-3 px-4 text-left text-sm font-semibold">Business</th>
+                                <th class="py-3 px-4 text-left text-sm font-semibold">tags</th>
                                 <th class="py-3 px-4 text-center text-sm font-semibold">Actions</th>
+                                
+
                             </tr>
                         </thead>
                         <tbody>
@@ -42,6 +45,16 @@
                                     <td class="py-3 px-4 text-gray-800 {{ ($person->business?->deleted_at) ? 'italic' : '' }}">
                                         {{ $person->business?->business_name }}
                                     </td>
+
+                                    
+                                    <td class="py-3 px-4 text-gray-800">
+                                        @foreach($person->tags as $tag)
+                                            <span class="bg-blue-200 text-blue-800 rounded-full px-2 py-1 text-xs mr-1">
+                                                {{ $tag->tag_name }}
+                                            </span>
+                                        @endforeach
+                                        
+                                
                                     
                                     <td class="py-3 px-4 text-center flex justify-center gap-4">
                                         <!-- Edit Button -->
